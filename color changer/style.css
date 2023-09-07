@@ -1,0 +1,28 @@
+body {
+
+    background-color: black;
+    transition: background-color 0.5s ease;
+
+
+}
+
+.colorChangerDiv {
+
+    text-align: center;
+    font-size: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    margin: 280px auto;
+
+}
+
+button {
+    
+    font-size: 40px;
+    background-color: orange;
+    color: white;
+
+}
