@@ -1,0 +1,36 @@
+body {
+
+    background-color: cyan;
+    color: black;
+
+}
+
+.container {
+
+    background-color: cyan;
+    /* margin: 40% 42%; */
+    /* padding: 2%; */
+    /* border: 2px black solid; */
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.temp {
+
+    font-size: 18px;
+    font-weight: bolder;
+    
+}
+
+/* 
+#getLocation {
+
+    font-size: 15px;
+    font-weight: 900;
+    background-color: yellow;
+    color: black;
+    padding: 2%;
+    margin: 10%;
+    
+} */
