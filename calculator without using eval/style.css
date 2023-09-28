@@ -1,0 +1,36 @@
+body {
+
+    background-color: white;
+    font-size: medium;
+    font-weight: bolder;
+
+}
+
+#container{
+    
+    background-color: darkgray;
+    width: 180px;
+    border: 5px solid gray;
+    margin: 200px 600px;
+}
+
+table{
+    width: 100%;
+    border-collapse: separate;
+    border-color: white;
+    border-spacing: 2px;
+}
+
+td{
+    text-align: center;
+    padding: 3px 10px 3px 3px;
+    display: flex;
+    display: inline-block; 
+}
+
+input[type="button"]{
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
