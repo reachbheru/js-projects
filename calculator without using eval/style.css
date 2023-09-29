@@ -1,36 +1,43 @@
 body {
-
     background-color: white;
     font-size: medium;
     font-weight: bolder;
-
 }
 
-#container{
-    
+#container{  
     background-color: darkgray;
-    width: 180px;
+    width: 200px;
     border: 5px solid gray;
     margin: 200px 600px;
+    margin: 50%;
 }
 
 table{
     width: 100%;
     border-collapse: separate;
     border-color: white;
-    border-spacing: 2px;
+    border-spacing: 1px;
 }
 
 td{
     text-align: center;
-    padding: 3px 10px 3px 3px;
+    padding: 2px 4px;
+    padding: 1% 2%;
     display: flex;
     display: inline-block; 
 }
 
 input[type="button"]{
-    width: 30px;
-    height: 30px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+input[type="text"]{
+    width: 180px; 
+    height: 20px;
     font-size: 18px;
     font-weight: bold;
 }
