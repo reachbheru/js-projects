@@ -1,4 +1,4 @@
-const outputList = [];//creating a array to hold input value
+const outputList = [];
 
 
 function inputButton(inputValue) {
@@ -17,8 +17,8 @@ function inputButton(inputValue) {
 
 function updateDisplay() {
   const resultField = document.getElementById("result");
-  const stringExpression = new String(outputList);//making inputValues into a expression
-  const expression = stringExpression.replaceAll(",","");//removing commas from stringExpression
+  const stringExpression = new String(outputList);
+  const expression = stringExpression.replaceAll(",","");
   resultField.value = expression;
 }
 
@@ -38,9 +38,9 @@ function backspace(){
 
 
 function calculate() {
-  const stringExpression = new String(outputList);//making inputValues into a expression
-  const expression = stringExpression.replaceAll(",","");//removing commas from stringExpression
-  outputList.length = 0;//clearing outputList 
+  const stringExpression = new String(outputList);
+  const expression = stringExpression.replaceAll(",","");
+  outputList.length = 0; 
   const result = evaluateExpression(expression);
   outputList.push(result);
   document.getElementById("result").value = result;
@@ -50,6 +50,6 @@ function calculate() {
 
 function evaluateExpression(expression){
 
-  const func =  new Function('return '+expression);//this function will return the calculated value
+  const func =  new Function('return '+expression);
   return func();
 }
