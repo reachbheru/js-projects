@@ -1,0 +1,27 @@
+body{
+    background-color: yellow;
+    color: white;
+}
+
+/* div{
+    background-color: aqua;
+    width: 450px;
+    margin: 40% 40%;
+}
+
+#text{
+    align-content: flex-start;
+    background-color: white;
+    color: black;
+    font-size: x-large;
+    width: 120px;
+} */
+
+#main{
+    background-color: white;
+    width: 250px;
+    height: 50px;
+    border: 3px solid black;
+    padding: 5px;
+    margin: 5px 100px;
+}

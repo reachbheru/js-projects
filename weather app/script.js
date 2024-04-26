@@ -1,57 +1,54 @@
 addEventListener("DOMContentLoaded", () => {
-  let lat = null;
-  let lon = null;
-  let time = null;
-  let temp = null;
-  let date = null;
-  let maxTemp = null;
-  let minTemp = null;
 
-  const dateFormat = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+  document.querySelector(".search button").addEventListener('click',()=> {
+    let Temp = null;
+    let humidity = null;
+    let windSpeed = null;
+    let name = null;
 
-  let temperature = document.getElementsByClassName("temp");
-  // const getLocationButton = document.getElementById('getLocation');
-  const locationOutput = document.getElementById("locationOutput");
+    // function weatherCondition(condition){
+    //   if (condition === "clear") {
+    //     image.src = "images/clear.png";
+    //   }
+    //   else if(condition === "clouds"){
+    //     image.src = "images/clouds.png"
+    //   }
+    //   else if(condition === "drizzle") {
+    //     image.src = "image/drizzle.png"
+    //   }
+    //   else if(condition === "humidity"){
+    //     image.src = "image/humidity.png"
+    //   }
+    // }
+  
+    const city = document.querySelector(".search input").value;
+    const temperature = document.querySelector(".temp");
+    const locationOutput = document.querySelector(".location");
+    const humidityOutput = document.querySelector(".humidityData");
+    const windOutput = document.querySelector(".windData");
+    const image = document.querySelector(".image");
+  
+     fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2c2d029a529fac94718a7119161f6025&units=metric`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        Temp = data.main.temp;
+        humidity = data.main.humidity;
+        windSpeed = data.wind.speed;
+        name = data.name;
+        locationOutput.innerHTML = name;
+        temperature.innerHTML = Math.round(`${Temp}`)+"°C";
+        windOutput.innerHTML = `${windSpeed} Km/h`;
+        humidityOutput.innerHTML = `${humidity} %`;
+        // weatherCondition(data.weather.main);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("error 404")
+      });
+  })
 
-  //making api request
-
-   fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=22&longitude=79&hourly=temperature_2m&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FSingapore"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      // console.log(data);
-      temp = data.hourly.temperature_2m[0];
-      time = new Date(data.hourly.time[0]);
-      date = time.toLocaleDateString("en-US", dateFormat);
-      maxTemp = data.daily.temperature_2m_max[0];
-      minTemp = data.daily.temperature_2m_min[0];
-      lat = data.latitude;
-      lon = data.longitude;
-      locationOutput.textContent = `Hourly temperture is ${temp}, Daily maximum temperature is ${maxTemp}, Daily minimum temperature is ${minTemp}, date is ${date}, latitude is ${lat}, longitude is ${lon}`;
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
 });
 
-// taking user geolocation
-
-//  getLocationButton.addEventListener('click', () => {
-
-//     if ('geolocation' in navigator){
-
-//        navigator.geolocation.getCurrentPosition( (position) => {
-
-//           lat = position.coords.latitude;
-//           lon = position.coords.longitude;
-
-//        })
-
-//     }
-
-//  })
